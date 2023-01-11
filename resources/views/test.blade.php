@@ -26,18 +26,6 @@
             transition: border .3s;
             }
 
-            .card-input-element:checked+.card::after {
-            content: '\e5ca';
-            color: #ff0000;
-            font-size: 24px;
-            -webkit-animation-name: fadeInCheckbox;
-            animation-name: fadeInCheckbox;
-            -webkit-animation-duration: .5s;
-            animation-duration: .5s;
-            -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-            }
-
             @-webkit-keyframes fadeInCheckbox {
             from {
                 opacity: 0;
@@ -67,35 +55,14 @@
         <div class="row p-4 pb-0 pe-lg-0 pt-lg-0 align-items-center rounded-3 border shadow-lg">
           <div class="col-lg-12 p-3 p-lg-5 pt-lg-0">
             <div>
-                <h3 class="display-5 fw-bold lh-1 my-5">Question here</h3>
+                <h4 class="display-6 fw-bold lh-1 my-5">Question here</h4>
 
                 <div>
 
-                    <label>
+                    <label class="my-1">
                         <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
                         <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
                         Answer 1
-                        </div>
-                    </label>
-
-                    <label class="mt-3">
-                        <input type="radio" name="demo" class="card-input-element d-none" value="demo2">
-                        <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
-                        Answer 2
-                        </div>
-                    </label>
-
-                    <label>
-                        <input type="radio" name="demo" class="card-input-element d-none" id="demo1">
-                        <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
-                        Answer 1
-                        </div>
-                    </label>
-
-                    <label class="mt-3">
-                        <input type="radio" name="demo" class="card-input-element d-none" value="demo2">
-                        <div class="card card-body bg-light d-flex flex-row justify-content-between align-items-center">
-                        Answer 2
                         </div>
                     </label>
 
