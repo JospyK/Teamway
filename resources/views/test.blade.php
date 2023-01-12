@@ -26,22 +26,32 @@
         transition: border .3s;
         }
 
-        .unchecked+.card {
-            border: 2px solid #fd0d35;
-            -webkit-transition: border .3s;
-            -o-transition: border .3s;
-            transition: border .3s;
+        .blink {
+            animation: blinker 1s linear;
+        }
+
+        @keyframes blinker {
+            10% { border: 2px solid red; }
+            20% { border: 2px solid white; }
+            30% { border: 2px solid red; }
+            40% { border: 2px solid white; }
+            50% { border: 2px solid red; }
+            60% { border: 2px solid white; }
+            70% { border: 2px solid red; }
+            80% { border: 2px solid white; }
+            90% { border: 2px solid red; }
+            100% { border: 2px solid white; }
         }
 
         @-webkit-keyframes fadeInCheckbox {
-        from {
-            opacity: 0;
-            -webkit-transform: rotateZ(-20deg);
-        }
-        to {
-            opacity: 1;
-            -webkit-transform: rotateZ(0deg);
-        }
+            from {
+                opacity: 0;
+                -webkit-transform: rotateZ(-20deg);
+            }
+            to {
+                opacity: 1;
+                -webkit-transform: rotateZ(0deg);
+            }
         }
 
         @keyframes fadeInCheckbox {
@@ -108,8 +118,10 @@
                     <button type="button" class="btn btn-primary btn-md px-4 fw-bold my-3" id="nextBtn" onclick="nextPrev(1)">NEXT</button>
                 </div>
                 <div style="text-align:center;margin-top:40px;">
-                    <span class="step"></span>
-                    <span class="step"></span>
+                    @foreach ($questions as $key => $question)
+                        <span class="step"></span>
+                    @endforeach
+                        <span class="step"></span>
                 </div>
 
             </form>

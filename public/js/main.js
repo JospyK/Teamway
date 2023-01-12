@@ -58,7 +58,8 @@ function validateForm() {
   if (!valid) {
     u = document.getElementsByClassName("box"+currentTab)
     for (i = 0; i < u.length; i++) {
-        u[i].className += " unchecked";
+        //u[i].className += " blink";
+        runAnimation(u[i])
     }
   }
 
@@ -75,14 +76,8 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-function checkRadios(){
-    var radios = document.getElementsByName("choice");
 
-    for (var i = 0, len = radios.length; i < len; i++) {
-         if (radios[i].checked) {
-             return true;
-         }
-    }
-
-    return false;
+function runAnimation(myDiv){
+    myDiv.classList.remove('blink');
+    setTimeout(() => myDiv.classList.add('blink'), 0);
 }
