@@ -23,6 +23,7 @@ class Answer extends Model
     protected $fillable = [
         'name',
         'question_id',
+        'type',
         'point',
         'created_at',
         'updated_at',

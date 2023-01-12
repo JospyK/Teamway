@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/test', [PageController::class, 'test'])->name('test');
+Route::post('/test/process', [PageController::class, 'process'])->name('test.process');
 
 Auth::routes(['register' => false]);
 
