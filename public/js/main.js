@@ -13,9 +13,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "SUBMIT";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "NEXT";
   }
   //... and run a function that will display the correct step indicator:
   fixStepIndicator(n)
@@ -42,23 +42,26 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
+  var x, y, i, valid = false;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
   // A loop that checks every input field in the current tab:
+
   for (i = 0; i < y.length; i++) {
     // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false
-      valid = false;
+    if (y[i].checked || y[i].getAttribute('type') == "text") {
+      // and set the current valid status to true
+      valid = true;
     }
   }
-  // If the valid status is true, mark the step as finished and valid:
-  if (valid) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
+  // If the valid status is false, mark the actual content as unvalid:
+  if (!valid) {
+    u = document.getElementsByClassName("box"+currentTab)
+    for (i = 0; i < u.length; i++) {
+        u[i].className += " unchecked";
+    }
   }
+
   return valid; // return the valid status
 }
 

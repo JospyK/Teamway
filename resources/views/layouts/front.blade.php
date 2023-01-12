@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 
+  @yield('styles')
 </head>
 <body>
 
@@ -24,8 +25,11 @@
     @yield('content')
 
     <footer class="text-center container mt-5">
-    <hr>
-    <p class="my-4">Build with ❤️ by <a href="https://github.com/JospyK">Jospy GOUDALO</a> for <a href="https://teamway.io">Teamway</a></p>
+        <hr>
+        <div class="my-4 d-flex justify-content-between">
+            <div>Build with ❤️ by <a href="https://github.com/JospyK">Jospy GOUDALO</a> for <a href="https://teamway.io">Teamway</a></div>
+            <div><a href="{{route('login')}}">Login</a></div>
+        </div>
     </footer>
 
 

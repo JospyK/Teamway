@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Answer;
 use App\Models\Question;
+use App\Models\Test;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -17,38 +18,38 @@ class PageController extends Controller
     {
         // get all questions with answers from database
         $questions = Question::with('answers')->take(2)->get();
-
         return view('test', compact('questions'));
     }
 
 
     public function process(Request $request)
     {
-
-
-
-        $name = $request->name;
-        $selected_answer = Answer::whereIn('id', array_values($request->all()))->get();
+        $selected_answer = Answer::whereIn('id', array_values($request->except('_token')))->get();
 
         $extrovert = 0;
         $introvert = 0;
-        $result = '';
-
 
         foreach ($selected_answer as $key => $answer) {
             if($answer->type == 'e') {
-                $extrovert += $answer->point;
+                $extrovert++;
             }
             else {
-                $introvert += $answer->point;
+                $introvert++;
             }
         }
 
         $result = $extrovert > $introvert ? 'Extrovert' : 'Introvert';
 
-        dump($result);
-        dd(array_values($request->except('_token')));
-        return view('results', compact('result'));
+        $test = [];
+        if($request->name) {
+            $test = Test::create([
+                'name' => $request->name,
+                'final_result' => $result,
+            ]);
+            $test->selected_answers()->sync($request->input('selected_answers', array_values($request->except(['_token', 'name']))));
+        }
+
+        return view('results', compact('result', 'test'));
     }
 
 

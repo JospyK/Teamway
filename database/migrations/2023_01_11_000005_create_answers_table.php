@@ -12,11 +12,8 @@ class CreateAnswersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->nullable();
             $table->string('type')->nullable();
-            $table->integer('point')->nullable();
-
             $table->unsignedBigInteger('question_id')->nullable();
             $table->foreign('question_id')->references('id')->on('questions');
-
             $table->timestamps();
             $table->softDeletes();
         });

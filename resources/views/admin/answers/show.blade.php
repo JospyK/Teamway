@@ -41,10 +41,10 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.answer.fields.point') }}
+                            {{ trans('cruds.answer.fields.type') }}
                         </th>
                         <td>
-                            {{ $answer->point }}
+                            {{ $answer->type }}
                         </td>
                     </tr>
                 </tbody>

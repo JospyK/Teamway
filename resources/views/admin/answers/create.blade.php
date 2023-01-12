@@ -34,14 +34,14 @@
                 <span class="help-block">{{ trans('cruds.answer.fields.question_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="point">{{ trans('cruds.answer.fields.point') }}</label>
-                <input class="form-control {{ $errors->has('point') ? 'is-invalid' : '' }}" type="number" name="point" id="point" value="{{ old('point', '') }}" step="1">
-                @if($errors->has('point'))
+                <label for="type">{{ trans('cruds.answer.fields.type') }}</label>
+                <input class="form-control {{ $errors->has('type') ? 'is-invalid' : '' }}" type="text" name="type" id="type" value="{{ old('type', '') }}" step="1">
+                @if($errors->has('type'))
                     <div class="invalid-feedback">
-                        {{ $errors->first('point') }}
+                        {{ $errors->first('type') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.answer.fields.point_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.answer.fields.type_helper') }}</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

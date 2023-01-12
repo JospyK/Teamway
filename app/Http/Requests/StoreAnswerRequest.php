@@ -21,11 +21,9 @@ class StoreAnswerRequest extends FormRequest
                 'string',
                 'nullable',
             ],
-            'point' => [
+            'type' => [
+                'string'
                 'nullable',
-                'integer',
-                'min:-2147483648',
-                'max:2147483647',
             ],
         ];
     }

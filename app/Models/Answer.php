@@ -24,7 +24,6 @@ class Answer extends Model
         'name',
         'question_id',
         'type',
-        'point',
         'created_at',
         'updated_at',
         'deleted_at',

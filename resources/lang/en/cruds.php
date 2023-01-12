@@ -79,8 +79,8 @@ return [
             'updated_at_helper' => ' ',
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => ' ',
-            'point'             => 'Point',
-            'point_helper'      => ' ',
+            'type'             => 'Type',
+            'type_helper'      => ' ',
         ],
     ],
     'test' => [

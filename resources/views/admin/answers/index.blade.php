@@ -31,7 +31,7 @@
                             {{ trans('cruds.answer.fields.question') }}
                         </th>
                         <th>
-                            {{ trans('cruds.answer.fields.point') }}
+                            {{ trans('cruds.answer.fields.type') }}
                         </th>
                         <th>
                             &nbsp;
@@ -54,7 +54,7 @@
                                 {{ $answer->question->name ?? '' }}
                             </td>
                             <td>
-                                {{ $answer->point ?? '' }}
+                                {{ $answer->type ?? '' }}
                             </td>
                             <td>
                                 @can('answer_show')
