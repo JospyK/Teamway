@@ -20,4 +20,4 @@ php artisan key:generate
 php artisan serve
 ```
 Make sure you have Git and Composer installed on your machine before running these commands.
-Also, you might need to configure your environment variables in the .env file before proceeding with step 6.
+Also, you might need to configure your environment variables in the .env file before proceeding with: php artisan serve.
