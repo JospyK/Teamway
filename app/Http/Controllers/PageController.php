@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Answer;
 use App\Models\Question;
 use App\Models\Test;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PageController extends Controller

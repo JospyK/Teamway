@@ -22,7 +22,7 @@ class StoreAnswerRequest extends FormRequest
                 'nullable',
             ],
             'type' => [
-                'string'
+                'string',
                 'nullable',
             ],
         ];
